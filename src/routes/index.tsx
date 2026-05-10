@@ -1,141 +1,151 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap, Shield, Layers } from "lucide-react";
-import heroImage from "@/assets/hero.jpg";
+import { ArrowRight, GraduationCap, Layers, CheckCircle2 } from "lucide-react";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { ContactSection } from "@/components/ContactSection";
+import { corsi, applicazioni } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lumen — Studio Digitale" },
-      { name: "description", content: "Costruiamo esperienze web eleganti, veloci e su misura. Design, sviluppo e brand in un unico studio." },
-      { property: "og:title", content: "Lumen — Studio Digitale" },
-      { property: "og:description", content: "Esperienze web eleganti, veloci, su misura." },
+      { title: "Studio Digitale — Soluzioni Digitali e Formazione Professionale" },
+      { name: "description", content: "Corsi online su Privacy, GDPR, Sicurezza e applicazioni professionali per imprese." },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
-function Index() {
+function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/50">
-        <nav className="container mx-auto flex h-16 items-center justify-between px-6">
-          <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="h-6 w-6 rounded-md [background:var(--gradient-hero)]" />
-            Lumen
-          </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#servizi" className="hover:text-foreground transition-colors">Servizi</a>
-            <a href="#lavori" className="hover:text-foreground transition-colors">Lavori</a>
-            <a href="#contatti" className="hover:text-foreground transition-colors">Contatti</a>
-          </div>
-          <Button variant="hero" size="sm">Inizia ora</Button>
-        </nav>
-      </header>
+      <SiteHeader />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 opacity-60"
-          style={{ backgroundImage: `url(${heroImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-background/40 via-background/80 to-background" />
-        <div className="container mx-auto px-6 max-w-5xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs text-muted-foreground mb-8">
-            <Sparkles className="h-3.5 w-3.5" />
-            Studio digitale · Disponibile per nuovi progetti
+      {/* HERO */}
+      <section className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 [background:var(--gradient-subtle)]">
+        <div aria-hidden className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-20 [background:var(--gradient-hero)] blur-3xl" />
+        <div aria-hidden className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full opacity-15 [background:var(--gradient-hero)] blur-3xl" />
+        <div className="container mx-auto px-6 max-w-5xl text-center relative">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs text-muted-foreground mb-8 shadow-sm">
+            <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+            Formazione certificata · Soluzioni su misura
           </div>
-          <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
-            Esperienze web che <span className="bg-clip-text text-transparent [background-image:var(--gradient-hero)]">brillano</span>.
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05]">
+            Soluzioni Digitali e <span className="bg-clip-text text-transparent [background-image:var(--gradient-hero)]">Formazione Professionale</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Progettiamo e sviluppiamo siti, prodotti e brand digitali. Eleganti, veloci, pensati per convertire.
+            Corsi online e applicazioni per imprese e professionisti.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button variant="hero" size="lg" className="h-12 px-8">
-              Parliamone <ArrowRight className="ml-1" />
+            <Button variant="hero" size="lg" className="h-12 px-8" asChild>
+              <Link to="/corsi"><GraduationCap className="mr-1" /> Corsi Online</Link>
             </Button>
             <Button variant="outline" size="lg" className="h-12 px-8" asChild>
-              <a href="#servizi">Scopri di più</a>
+              <Link to="/applicazioni"><Layers className="mr-1" /> Applicazioni per Imprese</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="servizi" className="py-24 border-t border-border/60">
+      {/* CORSI */}
+      <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-16">
-            <p className="text-sm font-medium text-muted-foreground mb-3">Cosa facciamo</p>
-            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
-              Un team, ogni fase del prodotto.
-            </h2>
+          <div className="max-w-2xl mb-14">
+            <p className="text-sm font-medium text-primary mb-3">Formazione</p>
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">Corsi Online</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Formazione chiara, aggiornata e conforme alle normative.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { icon: Layers, title: "Design", desc: "Brand, identità visiva e interfacce che raccontano chi sei." },
-              { icon: Zap, title: "Sviluppo", desc: "Siti e web app performanti, costruiti con cura artigianale." },
-              { icon: Shield, title: "Crescita", desc: "SEO, analytics e ottimizzazione continua per scalare." },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="group relative p-8 rounded-2xl border border-border bg-card hover:shadow-[var(--shadow-elegant)] transition-all duration-500 hover:-translate-y-1"
-              >
-                <div className="h-12 w-12 rounded-xl [background:var(--gradient-hero)] flex items-center justify-center mb-6 shadow-[var(--shadow-glow)]">
-                  <Icon className="h-5 w-5 text-primary-foreground" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {corsi.map(({ icon: Icon, title, desc }) => (
+              <article key={title} className="group p-6 rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+                <div className="h-11 w-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-5">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{desc}</p>
-              </div>
+                <h3 className="font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{desc}</p>
+                <Button variant="ghost" size="sm" className="px-0 text-primary hover:bg-transparent hover:text-primary/80" asChild>
+                  <Link to="/corsi">Dettagli <ArrowRight className="ml-1 h-3.5 w-3.5" /></Link>
+                </Button>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section id="lavori" className="py-24 [background:var(--gradient-subtle)]">
-        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
-          {[
-            { n: "120+", l: "Progetti consegnati" },
-            { n: "8 anni", l: "Di esperienza" },
-            { n: "98%", l: "Clienti soddisfatti" },
-          ].map(({ n, l }) => (
-            <div key={l}>
-              <div className="text-5xl md:text-6xl font-semibold tracking-tight bg-clip-text text-transparent [background-image:var(--gradient-hero)]">
-                {n}
-              </div>
-              <p className="mt-3 text-muted-foreground">{l}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section id="contatti" className="py-32">
-        <div className="container mx-auto px-6">
-          <div className="relative overflow-hidden rounded-3xl p-12 md:p-20 text-center [background:var(--gradient-hero)] shadow-[var(--shadow-elegant)]">
-            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-primary-foreground max-w-2xl mx-auto">
-              Pronto a dare vita al tuo prossimo progetto?
-            </h2>
-            <p className="mt-5 text-primary-foreground/80 max-w-xl mx-auto">
-              Raccontaci la tua idea. Ti rispondiamo entro 24 ore con un piano concreto.
-            </p>
-            <div className="mt-10">
-              <Button size="lg" className="h-12 px-8 bg-background text-foreground hover:bg-background/90" asChild>
-                <a href="mailto:hello@lumen.studio">hello@lumen.studio <ArrowRight className="ml-1" /></a>
-              </Button>
-            </div>
+          <div className="mt-12 text-center">
+            <Button variant="hero" size="lg" className="h-12 px-8" asChild>
+              <Link to="/corsi">Vai ai Corsi <ArrowRight className="ml-1" /></Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-border py-10">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Lumen Studio. Tutti i diritti riservati.</p>
-          <p>Made with care in Italy.</p>
+      {/* APPLICAZIONI */}
+      <section className="py-24 [background:var(--gradient-subtle)] border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-14">
+            <p className="text-sm font-medium text-primary mb-3">Soluzioni Digitali</p>
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">Applicazioni per Imprese</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Strumenti digitali per semplificare il lavoro e migliorare i processi.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {applicazioni.map(({ icon: Icon, title, desc }) => (
+              <article key={title} className="group p-6 rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+                <div className="h-11 w-11 rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{desc}</p>
+                <Button variant="ghost" size="sm" className="px-0 text-primary hover:bg-transparent hover:text-primary/80" asChild>
+                  <Link to="/applicazioni">Scopri di più <ArrowRight className="ml-1 h-3.5 w-3.5" /></Link>
+                </Button>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button variant="hero" size="lg" className="h-12 px-8" asChild>
+              <Link to="/applicazioni">Applicazioni per Imprese <ArrowRight className="ml-1" /></Link>
+            </Button>
+          </div>
         </div>
-      </footer>
+      </section>
+
+      {/* CHI SONO */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center max-w-5xl">
+          <div className="relative aspect-square max-w-sm mx-auto md:mx-0 w-full rounded-3xl [background:var(--gradient-hero)] shadow-[var(--shadow-elegant)] flex items-center justify-center">
+            <div className="absolute inset-3 rounded-2xl bg-card/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+              <div className="text-center text-primary-foreground">
+                <ShieldBadge />
+                <p className="mt-4 font-semibold text-lg">RSPP · Consulente Privacy</p>
+                <p className="text-sm opacity-80">Sviluppatore di soluzioni digitali</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-primary mb-3">Chi Sono</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-5">Esperienza, normative e tecnologia.</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              RSPP, consulente privacy e sviluppatore di soluzioni digitali. Aiuto scuole, aziende e professionisti
+              a lavorare meglio, in modo sicuro e conforme alle normative.
+            </p>
+            <ul className="mt-6 space-y-3 text-muted-foreground">
+              {["Formazione GDPR e D.Lgs. 81/08", "Consulenza privacy per scuole e PMI", "Sviluppo applicazioni gestionali"].map((t) => (
+                <li key={t} className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary shrink-0" />{t}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <ContactSection />
+      <SiteFooter />
     </div>
+  );
+}
+
+function ShieldBadge() {
+  return (
+    <svg viewBox="0 0 64 64" className="mx-auto h-16 w-16 text-primary-foreground" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M32 6l22 8v14c0 14-9 24-22 30C19 52 10 42 10 28V14l22-8z" />
+      <path d="M22 32l8 8 14-14" />
+    </svg>
   );
 }
