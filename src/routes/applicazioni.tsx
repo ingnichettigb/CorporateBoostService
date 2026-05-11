@@ -5,11 +5,12 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ContactSection } from "@/components/ContactSection";
 import { applicazioni } from "@/data/site";
 import { ArrowRight, Zap, Lock, RefreshCw } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/applicazioni")({
   head: () => ({
     meta: [
-      { title: "Applicazioni per Imprese — Strumenti digitali professionali" },
+      { title: "Applicazioni per Imprese — CorporateBoostService.IT" },
       { name: "description", content: "Applicazioni professionali per gestire adempimenti, formazione e processi aziendali." },
     ],
   }),
@@ -17,42 +18,44 @@ export const Route = createFileRoute("/applicazioni")({
 });
 
 function AppPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
+      <a href="#main" className="skip-link">{t("skip")}</a>
       <SiteHeader />
-      <section className="pt-32 pb-16 [background:var(--gradient-subtle)] border-b border-border">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <p className="text-sm font-medium text-primary mb-3">Soluzioni digitali</p>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">Applicazioni per Imprese</h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Strumenti digitali per semplificare il lavoro e migliorare i processi aziendali.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-2"><Zap className="h-4 w-4 text-primary" /> Veloci da implementare</span>
-            <span className="inline-flex items-center gap-2"><Lock className="h-4 w-4 text-primary" /> Sicure e conformi</span>
-            <span className="inline-flex items-center gap-2"><RefreshCw className="h-4 w-4 text-primary" /> Aggiornamenti continui</span>
+      <main id="main">
+        <section className="pt-36 pb-16 [background:var(--gradient-section-hero)] border-b-2 border-primary/15">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <p className="text-base font-bold text-primary mb-3 uppercase tracking-wider">{t("app.kicker")}</p>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">{t("app.title")}</h1>
+            <p className="mt-5 text-lg text-foreground/85 max-w-2xl mx-auto">{t("app.subtitle")}</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-foreground/85 font-semibold">
+              <span className="inline-flex items-center gap-2"><Zap className="h-5 w-5 text-primary" aria-hidden /> {t("app.feat1")}</span>
+              <span className="inline-flex items-center gap-2"><Lock className="h-5 w-5 text-primary" aria-hidden /> {t("app.feat2")}</span>
+              <span className="inline-flex items-center gap-2"><RefreshCw className="h-5 w-5 text-primary" aria-hidden /> {t("app.feat3")}</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-          {applicazioni.map(({ icon: Icon, title, desc }) => (
-            <article key={title} className="p-7 rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
-              <div className="h-12 w-12 rounded-xl [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h2 className="text-lg font-semibold mb-2">{title}</h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{desc}</p>
-              <Button variant="ghost" size="sm" className="px-0 text-primary hover:bg-transparent hover:text-primary/80">
-                Scopri di più <ArrowRight className="ml-1 h-3.5 w-3.5" />
-              </Button>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="py-20 [background:var(--gradient-section-app)]">
+          <div className="container mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+            {applicazioni.map(({ icon: Icon, key }) => (
+              <article key={key} className="p-7 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+                <div className="h-14 w-14 rounded-xl [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
+                  <Icon className="h-7 w-7" aria-hidden />
+                </div>
+                <h2 className="text-lg font-bold mb-2 text-foreground">{t(`app.items.${key}.title`)}</h2>
+                <p className="text-foreground/85 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
+                <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80">
+                  {t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                </Button>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <ContactSection />
+        <ContactSection />
+      </main>
       <SiteFooter />
     </div>
   );
