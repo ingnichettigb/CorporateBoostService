@@ -1,0 +1,104 @@
+{
+  "brand": "CorporateBoostService.IT",
+  "motto": "FACCIO TUTTO IO",
+  "skip": "Vai al contenuto",
+  "nav": {
+    "home": "Home",
+    "corsi": "Corsi",
+    "applicazioni": "Applicazioni",
+    "contatti": "Contattami"
+  },
+  "a11y": {
+    "language": "Lingua",
+    "largeText": "Testo grande",
+    "largeTextOn": "Testo grande attivo",
+    "highContrast": "Alto contrasto",
+    "highContrastOn": "Alto contrasto attivo"
+  },
+  "hero": {
+    "badge": "Formazione certificata · Soluzioni su misura",
+    "title1": "Soluzioni Digitali e",
+    "title2": "Formazione Professionale",
+    "subtitle": "Corsi online e applicazioni per imprese e professionisti. Faccio tutto io: dalla consulenza all'implementazione.",
+    "ctaCorsi": "Corsi Online",
+    "ctaApp": "Applicazioni per Imprese"
+  },
+  "corsi": {
+    "kicker": "Formazione",
+    "title": "Corsi Online",
+    "subtitle": "Formazione chiara, aggiornata e conforme alle normative.",
+    "details": "Dettagli",
+    "ctaAll": "Vai ai Corsi",
+    "pageTitle": "Corsi Online — Privacy, GDPR e Sicurezza",
+    "pageDesc": "Corsi online su privacy, GDPR, sicurezza sul lavoro e aggiornamenti normativi.",
+    "h1Kicker": "Formazione professionale",
+    "h1": "Corsi Online",
+    "h1Sub": "Formazione chiara, aggiornata e conforme alle normative italiane ed europee.",
+    "feat1": "Accesso 24/7",
+    "feat2": "Attestato finale",
+    "feat3": "Per aziende e privati",
+    "iscriviti": "Iscriviti",
+    "items": {
+      "privacy": { "title": "Privacy & Protezione Dati", "desc": "I principi della normativa privacy applicati al lavoro quotidiano." },
+      "gdpr": { "title": "GDPR per le Imprese", "desc": "Adempimenti, registri dei trattamenti e ruoli secondo il Reg. UE 2016/679." },
+      "sicurezza": { "title": "Sicurezza sul Lavoro", "desc": "Formazione D.Lgs. 81/08 per lavoratori, preposti e datori di lavoro." },
+      "news": { "title": "News Normative", "desc": "Aggiornamenti continui su privacy, sicurezza e novità legislative." }
+    }
+  },
+  "app": {
+    "kicker": "Soluzioni Digitali",
+    "title": "Applicazioni per Imprese",
+    "subtitle": "Strumenti digitali per semplificare il lavoro e migliorare i processi.",
+    "more": "Scopri di più",
+    "ctaAll": "Applicazioni per Imprese",
+    "pageTitle": "Applicazioni per Imprese — Strumenti digitali professionali",
+    "pageDesc": "Applicazioni professionali per gestire adempimenti, formazione e processi aziendali.",
+    "feat1": "Veloci da implementare",
+    "feat2": "Sicure e conformi",
+    "feat3": "Aggiornamenti continui",
+    "items": {
+      "adempimenti": { "title": "Gestione Adempimenti", "desc": "Tracciamento scadenze privacy e sicurezza con notifiche automatiche." },
+      "registro": { "title": "Registro Trattamenti", "desc": "Compilazione guidata del registro GDPR con esportazione PDF." },
+      "formazione": { "title": "Piattaforma Formazione", "desc": "Eroga corsi interni, traccia attestati e crediti formativi." },
+      "audit": { "title": "Audit Aziendale", "desc": "Check-up rapido di conformità con report personalizzato." },
+      "agenda": { "title": "Agenda Sopralluoghi", "desc": "Pianificazione sopralluoghi RSPP e consulenze sul campo." },
+      "kpi": { "title": "Dashboard KPI", "desc": "Indicatori in tempo reale su formazione, scadenze e rischi." }
+    }
+  },
+  "chiSono": {
+    "kicker": "Chi Sono",
+    "title": "Esperienza, normative e tecnologia.",
+    "subtitle": "RSPP, consulente privacy e sviluppatore di soluzioni digitali. Aiuto scuole, aziende e professionisti a lavorare meglio, in modo sicuro e conforme alle normative.",
+    "role": "RSPP · Consulente Privacy",
+    "role2": "Sviluppatore di soluzioni digitali",
+    "p1": "Formazione GDPR e D.Lgs. 81/08",
+    "p2": "Consulenza privacy per scuole e PMI",
+    "p3": "Sviluppo applicazioni gestionali"
+  },
+  "contact": {
+    "kicker": "Contatti",
+    "title": "Richiedi informazioni",
+    "subtitle": "Hai una domanda su un corso o un progetto? Scrivimi: rispondo entro 24 ore.",
+    "name": "Nome e cognome",
+    "namePh": "Mario Rossi",
+    "email": "Email",
+    "emailPh": "email@azienda.it",
+    "subject": "Oggetto",
+    "subjectPh": "Es. Corso GDPR per la mia azienda",
+    "message": "Messaggio",
+    "messagePh": "Descrivi brevemente la tua richiesta…",
+    "send": "Richiedi informazioni",
+    "sent": "Richiesta inviata. Ti risponderò a breve."
+  },
+  "footer": {
+    "tagline": "Formazione e soluzioni digitali per imprese e professionisti.",
+    "rights": "Tutti i diritti riservati",
+    "phone": "Telefono",
+    "vat": "P.IVA",
+    "address": "Indirizzo"
+  },
+  "home": {
+    "pageTitle": "CorporateBoostService.IT — Faccio tutto io",
+    "pageDesc": "Corsi online su Privacy, GDPR, Sicurezza e applicazioni professionali per imprese. Faccio tutto io."
+  }
+}
