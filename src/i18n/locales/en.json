@@ -1,0 +1,104 @@
+{
+  "brand": "CorporateBoostService.IT",
+  "motto": "I DO IT ALL",
+  "skip": "Skip to content",
+  "nav": {
+    "home": "Home",
+    "corsi": "Courses",
+    "applicazioni": "Applications",
+    "contatti": "Contact me"
+  },
+  "a11y": {
+    "language": "Language",
+    "largeText": "Large text",
+    "largeTextOn": "Large text on",
+    "highContrast": "High contrast",
+    "highContrastOn": "High contrast on"
+  },
+  "hero": {
+    "badge": "Certified training · Tailored solutions",
+    "title1": "Digital Solutions and",
+    "title2": "Professional Training",
+    "subtitle": "Online courses and applications for companies and professionals. I do it all: from consulting to implementation.",
+    "ctaCorsi": "Online Courses",
+    "ctaApp": "Business Applications"
+  },
+  "corsi": {
+    "kicker": "Training",
+    "title": "Online Courses",
+    "subtitle": "Clear, up-to-date training compliant with regulations.",
+    "details": "Details",
+    "ctaAll": "Go to Courses",
+    "pageTitle": "Online Courses — Privacy, GDPR and Safety",
+    "pageDesc": "Online courses on privacy, GDPR, workplace safety and regulatory updates.",
+    "h1Kicker": "Professional training",
+    "h1": "Online Courses",
+    "h1Sub": "Clear, up-to-date training compliant with Italian and EU regulations.",
+    "feat1": "24/7 access",
+    "feat2": "Final certificate",
+    "feat3": "For companies and individuals",
+    "iscriviti": "Enroll",
+    "items": {
+      "privacy": { "title": "Privacy & Data Protection", "desc": "Privacy regulation principles applied to daily work." },
+      "gdpr": { "title": "GDPR for Companies", "desc": "Obligations, processing records and roles under EU Reg. 2016/679." },
+      "sicurezza": { "title": "Workplace Safety", "desc": "Training under D.Lgs. 81/08 for workers, supervisors and employers." },
+      "news": { "title": "Regulatory News", "desc": "Continuous updates on privacy, safety and legislative changes." }
+    }
+  },
+  "app": {
+    "kicker": "Digital Solutions",
+    "title": "Business Applications",
+    "subtitle": "Digital tools to simplify work and improve processes.",
+    "more": "Learn more",
+    "ctaAll": "Business Applications",
+    "pageTitle": "Business Applications — Professional digital tools",
+    "pageDesc": "Professional applications to manage obligations, training and business processes.",
+    "feat1": "Quick to deploy",
+    "feat2": "Secure and compliant",
+    "feat3": "Continuous updates",
+    "items": {
+      "adempimenti": { "title": "Compliance Manager", "desc": "Track privacy and safety deadlines with automatic notifications." },
+      "registro": { "title": "Processing Register", "desc": "Guided GDPR register with PDF export." },
+      "formazione": { "title": "Training Platform", "desc": "Deliver internal courses, track certificates and credits." },
+      "audit": { "title": "Business Audit", "desc": "Quick compliance check-up with customized report." },
+      "agenda": { "title": "Site Visits Agenda", "desc": "Plan RSPP visits and on-site consulting." },
+      "kpi": { "title": "KPI Dashboard", "desc": "Real-time indicators on training, deadlines and risks." }
+    }
+  },
+  "chiSono": {
+    "kicker": "About me",
+    "title": "Experience, regulations and technology.",
+    "subtitle": "RSPP, privacy consultant and digital solutions developer. I help schools, companies and professionals work better, safely and in compliance.",
+    "role": "RSPP · Privacy Consultant",
+    "role2": "Digital solutions developer",
+    "p1": "GDPR and D.Lgs. 81/08 training",
+    "p2": "Privacy consulting for schools and SMBs",
+    "p3": "Management application development"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Request information",
+    "subtitle": "Have a question about a course or a project? Write to me: I reply within 24 hours.",
+    "name": "Full name",
+    "namePh": "John Doe",
+    "email": "Email",
+    "emailPh": "email@company.com",
+    "subject": "Subject",
+    "subjectPh": "E.g. GDPR course for my company",
+    "message": "Message",
+    "messagePh": "Briefly describe your request…",
+    "send": "Send request",
+    "sent": "Request sent. I will reply shortly."
+  },
+  "footer": {
+    "tagline": "Training and digital solutions for companies and professionals.",
+    "rights": "All rights reserved",
+    "phone": "Phone",
+    "vat": "VAT ID",
+    "address": "Address"
+  },
+  "home": {
+    "pageTitle": "CorporateBoostService.IT — I do it all",
+    "pageDesc": "Online courses on Privacy, GDPR, Safety and professional applications for companies."
+  }
+}
