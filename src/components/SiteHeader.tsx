@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Menu, X, LifeBuoy } from "lucide-react";
+import { ShieldCheck, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { AccessibilityToggles } from "@/components/AccessibilityToggles";
@@ -11,59 +11,92 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur-md border-b-2 border-primary/20">
-      <nav className="container mx-auto flex items-center justify-between gap-4 px-4 py-3" aria-label="Main">
-        <Link to="/" className="flex items-center gap-3 font-bold tracking-tight">
+      <nav className="container mx-auto flex items-center justify-between gap-3 px-4 py-3" aria-label="Main">
+        <Link to="/" className="flex items-center gap-3 font-bold tracking-tight shrink-0">
           <span className="h-11 w-11 rounded-lg [background:var(--gradient-hero)] flex items-center justify-center shadow-[var(--shadow-card)]">
             <ShieldCheck className="h-6 w-6 text-primary-foreground" aria-hidden />
           </span>
-          <span className="flex flex-col leading-tight">
+          <span className="hidden sm:flex flex-col leading-tight">
             <span className="text-base md:text-lg text-foreground">{t("brand")}</span>
             <span className="text-xs font-semibold text-primary uppercase tracking-wider">{t("motto")}</span>
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6 text-base font-semibold">
-          <Link to="/" className="text-foreground/80 hover:text-foreground" activeOptions={{ exact: true }} activeProps={{ className: "text-primary underline underline-offset-4" }}>{t("nav.home")}</Link>
-          <Link to="/corsi" className="text-foreground/80 hover:text-foreground" activeProps={{ className: "text-primary underline underline-offset-4" }}>{t("nav.corsi")}</Link>
-          <Link to="/applicazioni" className="text-foreground/80 hover:text-foreground" activeProps={{ className: "text-primary underline underline-offset-4" }}>{t("nav.applicazioni")}</Link>
-        </div>
-
         <div className="hidden md:flex items-center gap-2">
           <AccessibilityToggles />
-          <Button variant="hero" size="default" className="h-11" asChild>
-            <Link to="/" hash="assistenza"><LifeBuoy className="mr-1 h-4 w-4" aria-hidden />{t("nav.assistenza")}</Link>
-          </Button>
-          <Button variant="outline" size="default" className="h-11 border-2 border-primary text-primary font-semibold" asChild>
-            <Link to="/" hash="contatti">{t("nav.contatti")}</Link>
-          </Button>
         </div>
 
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="min-w-11 min-h-11 inline-flex items-center justify-center rounded-md border-2 border-foreground/20"
+            className="lg:hidden min-w-11 min-h-11 inline-flex items-center justify-center rounded-md border-2 border-foreground/20"
             aria-label="Menu"
             aria-expanded={open}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        <div className="hidden md:block">
-          <LanguageSwitcher />
-        </div>
       </nav>
 
+      {/* Barra pagine principali - sempre visibile, scrollabile su mobile */}
+      <div className="border-t border-primary/15 bg-primary/5">
+        <div className="container mx-auto px-2 overflow-x-auto">
+          <ul className="flex items-center gap-1 min-h-12 text-sm md:text-base font-semibold whitespace-nowrap">
+            <li>
+              <Link
+                to="/"
+                activeOptions={{ exact: true }}
+                activeProps={{ className: "bg-primary text-primary-foreground" }}
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                {t("nav.home")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/corsi"
+                activeProps={{ className: "bg-primary text-primary-foreground" }}
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                {t("nav.corsi")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/applicazioni"
+                activeProps={{ className: "bg-primary text-primary-foreground" }}
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                {t("nav.applicazioni")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                hash="assistenza"
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                {t("nav.assistenza")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                hash="contatti"
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                {t("nav.contatti")}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       {open && (
-        <div className="md:hidden border-t border-primary/20 bg-background px-4 py-4 flex flex-col gap-3">
-          <Link to="/" onClick={() => setOpen(false)} className="py-2 font-semibold">{t("nav.home")}</Link>
-          <Link to="/corsi" onClick={() => setOpen(false)} className="py-2 font-semibold">{t("nav.corsi")}</Link>
-          <Link to="/applicazioni" onClick={() => setOpen(false)} className="py-2 font-semibold">{t("nav.applicazioni")}</Link>
-          <Link to="/" hash="assistenza" onClick={() => setOpen(false)} className="py-2 font-semibold text-primary inline-flex items-center gap-2"><LifeBuoy className="h-5 w-5" aria-hidden />{t("nav.assistenza")}</Link>
-          <Link to="/" hash="contatti" onClick={() => setOpen(false)} className="py-2 font-semibold">{t("nav.contatti")}</Link>
-          <div className="flex flex-wrap gap-2 pt-2 border-t border-border">
+        <div className="lg:hidden border-t border-primary/20 bg-background px-4 py-4 flex flex-col gap-3">
+          <div className="flex flex-wrap gap-2">
             <AccessibilityToggles />
           </div>
         </div>
