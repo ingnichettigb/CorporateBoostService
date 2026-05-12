@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Menu, X } from "lucide-react";
+import { ShieldCheck, Menu, X, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { AccessibilityToggles } from "@/components/AccessibilityToggles";
