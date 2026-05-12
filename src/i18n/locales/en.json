@@ -58,7 +58,7 @@
     "feat2": "Secure and compliant",
     "feat3": "Continuous updates",
     "items": {
-      "adempimenti": { "title": "Compliance Manager", "desc": "Track privacy and safety deadlines with automatic notifications." },
+      "smartMaintenance": { "title": "Smart Maintenance", "desc": "The digital assistant for maintenance and on-site inspections: captures photos and videos, turns voice notes into text and organizes everything into ready-to-share reports." },
       "registro": { "title": "Processing Register", "desc": "Guided GDPR register with PDF export." },
       "formazione": { "title": "Training Platform", "desc": "Deliver internal courses, track certificates and credits." },
       "audit": { "title": "Business Audit", "desc": "Quick compliance check-up with customized report." },

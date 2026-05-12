@@ -1,4 +1,5 @@
-import { ShieldCheck, FileLock, HardHat, Newspaper, FileSpreadsheet, ClipboardList, GraduationCap, Building2, Calendar, BarChart3 } from "lucide-react";
+import { ShieldCheck, FileLock, HardHat, Newspaper, FileSpreadsheet, Wrench, GraduationCap, Building2, Calendar, BarChart3 } from "lucide-react";
+import smartMaintenanceLogo from "@/assets/smart-maintenance.png";
 
 export const corsi = [
   { icon: FileLock, key: "privacy" },
@@ -8,7 +9,7 @@ export const corsi = [
 ] as const;
 
 export const applicazioni = [
-  { icon: ClipboardList, key: "adempimenti" },
+  { icon: Wrench, key: "smartMaintenance", image: smartMaintenanceLogo },
   { icon: FileSpreadsheet, key: "registro" },
   { icon: GraduationCap, key: "formazione" },
   { icon: Building2, key: "audit" },
