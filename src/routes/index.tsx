@@ -91,18 +91,28 @@ function Home() {
               <p className="mt-4 text-lg text-foreground/85">{t("app.subtitle")}</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {applicazioni.map(({ icon: Icon, key }) => (
+              {applicazioni.map((item) => {
+                const { icon: Icon, key } = item;
+                const image = "image" in item ? item.image : undefined;
+                return (
                 <article key={key} className="p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
-                  <div className="h-12 w-12 rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
-                    <Icon className="h-6 w-6" aria-hidden />
-                  </div>
+                  {image ? (
+                    <div className="h-16 w-16 rounded-lg overflow-hidden bg-white border border-primary/20 flex items-center justify-center mb-5">
+                      <img src={image} alt={t(`app.items.${key}.title`)} className="h-full w-full object-contain" />
+                    </div>
+                  ) : (
+                    <div className="h-12 w-12 rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
+                      <Icon className="h-6 w-6" aria-hidden />
+                    </div>
+                  )}
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t(`app.items.${key}.title`)}</h3>
                   <p className="text-foreground/80 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
                   <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80" asChild>
                     <Link to="/applicazioni">{t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></Link>
                   </Button>
                 </article>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-12 text-center">
               <Button variant="hero" size="lg" className="h-12 px-8" asChild>

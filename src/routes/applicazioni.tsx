@@ -39,18 +39,28 @@ function AppPage() {
 
         <section className="py-20 [background:var(--gradient-section-app)]">
           <div className="container mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-            {applicazioni.map(({ icon: Icon, key }) => (
+            {applicazioni.map((item) => {
+              const { icon: Icon, key } = item;
+              const image = "image" in item ? item.image : undefined;
+              return (
               <article key={key} className="p-7 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
-                <div className="h-14 w-14 rounded-xl [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
-                  <Icon className="h-7 w-7" aria-hidden />
-                </div>
+                {image ? (
+                  <div className="h-16 w-16 rounded-xl overflow-hidden bg-white border border-primary/20 flex items-center justify-center mb-5">
+                    <img src={image} alt={t(`app.items.${key}.title`)} className="h-full w-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="h-14 w-14 rounded-xl [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
+                    <Icon className="h-7 w-7" aria-hidden />
+                  </div>
+                )}
                 <h2 className="text-lg font-bold mb-2 text-foreground">{t(`app.items.${key}.title`)}</h2>
                 <p className="text-foreground/85 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
                 <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80">
                   {t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
                 </Button>
               </article>
-            ))}
+              );
+            })}
           </div>
         </section>
 
