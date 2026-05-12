@@ -38,12 +38,15 @@ function Home() {
             <p className="mt-6 text-lg md:text-xl text-foreground/85 max-w-2xl mx-auto leading-relaxed">
               {t("hero.subtitle")}
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Button variant="hero" size="lg" className="h-12 px-8" asChild>
-                <Link to="/corsi"><GraduationCap className="mr-1" aria-hidden /> {t("hero.ctaCorsi")}</Link>
-              </Button>
-              <Button variant="outline" size="lg" className="h-12 px-8 border-2 border-primary text-primary font-semibold" asChild>
+            <div className="mt-10 flex flex-col items-center gap-4 max-w-sm mx-auto">
+              <Button variant="outline" size="lg" className="h-12 w-full border-2 border-primary text-primary font-semibold" asChild>
                 <Link to="/applicazioni"><Layers className="mr-1" aria-hidden /> {t("hero.ctaApp")}</Link>
+              </Button>
+              <Button variant="hero" size="lg" className="h-12 w-full" asChild>
+                <Link to="/" hash="assistenza"><LifeBuoy className="mr-1" aria-hidden /> {t("nav.assistenza")}</Link>
+              </Button>
+              <Button variant="hero" size="lg" className="h-12 w-full" asChild>
+                <Link to="/corsi"><GraduationCap className="mr-1" aria-hidden /> {t("hero.ctaCorsi")}</Link>
               </Button>
             </div>
           </div>
