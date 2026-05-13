@@ -48,7 +48,7 @@
   },
   "app": {
     "kicker": "Digital Solutions",
-    "title": "Business Applications",
+    "title": "Business Applications (APP)",
     "subtitle": "Digital tools to simplify work and improve processes.",
     "more": "Learn more",
     "ctaAll": "Business Applications",
@@ -59,12 +59,11 @@
     "feat3": "Continuous updates",
     "items": {
       "smartMaintenance": { "title": "Smart Maintenance", "desc": "The digital assistant for maintenance and on-site inspections: captures photos and videos, turns voice notes into text and organizes everything into ready-to-share reports." },
-      "registro": { "title": "Processing Register", "desc": "Guided GDPR register with PDF export." },
-      "formazione": { "title": "Training Platform", "desc": "Deliver internal courses, track certificates and credits." },
-      "audit": { "title": "Business Audit", "desc": "Quick compliance check-up with customized report." },
-      "agenda": { "title": "Site Visits Agenda", "desc": "Plan RSPP visits and on-site consulting." },
-      "kpi": { "title": "KPI Dashboard", "desc": "Real-time indicators on training, deadlines and risks." }
-    }
+      "fat": { "title": "FAT — Factory Acceptance Test", "desc": "Digital management of factory acceptance tests: checklists, photo evidence and signed reports." },
+      "sat": { "title": "SAT — Site Acceptance Test", "desc": "Step-by-step on-site acceptance tests with outcome tracking and non-conformities." },
+      "lp": { "title": "LP — Lesson Plan", "desc": "Plan lessons and training paths with objectives, materials and assessments." }
+    },
+    "wip": "Under construction"
   },
   "chiSono": {
     "kicker": "About me",
