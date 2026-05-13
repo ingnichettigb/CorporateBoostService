@@ -165,18 +165,29 @@ function Home() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
-                { Icon: ShieldCheck, label: "GDPR" },
-                { Icon: FileLock, label: "Privacy" },
-                { Icon: Video, label: "Telecamere" },
-                { Icon: MapPin, label: "GPS" },
-              ].map(({ Icon, label }) => (
-                <article key={label} className="p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] text-center">
-                  <div className="h-14 w-14 mx-auto rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-4">
-                    <Icon className="h-7 w-7" aria-hidden />
-                  </div>
-                  <h3 className="font-bold text-lg text-foreground">{label}</h3>
-                </article>
-              ))}
+                { Icon: ShieldCheck, label: "GDPR", to: "/assistenza-gdpr" as const },
+                { Icon: FileLock, label: "Privacy", to: "/assistenza-gdpr" as const },
+                { Icon: Video, label: "Telecamere", to: null },
+                { Icon: MapPin, label: "GPS", to: null },
+              ].map(({ Icon, label, to }) => {
+                const inner = (
+                  <>
+                    <div className="h-14 w-14 mx-auto rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-4">
+                      <Icon className="h-7 w-7" aria-hidden />
+                    </div>
+                    <h3 className="font-bold text-lg text-foreground">{label}</h3>
+                  </>
+                );
+                return to ? (
+                  <Link key={label} to={to} className="p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] text-center hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)] transition-all">
+                    {inner}
+                  </Link>
+                ) : (
+                  <article key={label} className="p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] text-center">
+                    {inner}
+                  </article>
+                );
+              })}
             </div>
             <div className="mt-10 text-center">
               <Button variant="hero" size="lg" className="h-12 px-8" asChild>
