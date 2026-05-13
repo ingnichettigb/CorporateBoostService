@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, GraduationCap, Layers, CheckCircle2, ShieldCheck, FileLock, Video, MapPin, LifeBuoy } from "lucide-react";
+import { ArrowRight, GraduationCap, Layers, CheckCircle2, ShieldCheck, FileLock, Video, MapPin, LifeBuoy, Construction } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -94,8 +94,14 @@ function Home() {
               {applicazioni.map((item) => {
                 const { icon: Icon, key } = item;
                 const image = "image" in item ? item.image : undefined;
+                const wip = "wip" in item ? item.wip : false;
                 return (
-                <article key={key} className="p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+                <article key={key} className="relative p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+                  {wip && (
+                    <span className="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-yellow-400 text-black px-2.5 py-1 text-xs font-bold uppercase tracking-wider border-2 border-black">
+                      <Construction className="h-3.5 w-3.5" aria-hidden /> {t("app.wip")}
+                    </span>
+                  )}
                   {image ? (
                     <div className="h-16 w-16 rounded-lg overflow-hidden bg-white border border-primary/20 flex items-center justify-center mb-5">
                       <img src={image} alt={t(`app.items.${key}.title`)} className="h-full w-full object-contain" />
@@ -107,9 +113,11 @@ function Home() {
                   )}
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t(`app.items.${key}.title`)}</h3>
                   <p className="text-foreground/80 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
-                  <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80" asChild>
-                    <Link to="/applicazioni">{t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></Link>
-                  </Button>
+                  {!wip && (
+                    <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80" asChild>
+                      <Link to="/applicazioni">{t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></Link>
+                    </Button>
+                  )}
                 </article>
                 );
               })}
