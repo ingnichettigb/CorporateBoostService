@@ -48,7 +48,7 @@
   },
   "app": {
     "kicker": "Soluzioni Digitali",
-    "title": "Applicazioni per Imprese",
+    "title": "Applicazioni per Imprese (APP)",
     "subtitle": "Strumenti digitali per semplificare il lavoro e migliorare i processi.",
     "more": "Scopri di più",
     "ctaAll": "Applicazioni per Imprese",
@@ -59,12 +59,11 @@
     "feat3": "Aggiornamenti continui",
     "items": {
       "smartMaintenance": { "title": "Smart Maintenance", "desc": "L'assistente digitale per manutenzioni e sopralluoghi: acquisisce immagini e video, trasforma le note vocali in testo e organizza tutto in report pronti da condividere." },
-      "registro": { "title": "Registro Trattamenti", "desc": "Compilazione guidata del registro GDPR con esportazione PDF." },
-      "formazione": { "title": "Piattaforma Formazione", "desc": "Eroga corsi interni, traccia attestati e crediti formativi." },
-      "audit": { "title": "Audit Aziendale", "desc": "Check-up rapido di conformità con report personalizzato." },
-      "agenda": { "title": "Agenda Sopralluoghi", "desc": "Pianificazione sopralluoghi RSPP e consulenze sul campo." },
-      "kpi": { "title": "Dashboard KPI", "desc": "Indicatori in tempo reale su formazione, scadenze e rischi." }
-    }
+      "fat": { "title": "FAT — Factory Acceptance Test", "desc": "Gestione digitale dei collaudi in fabbrica: checklist, evidenze fotografiche e verbali firmati." },
+      "sat": { "title": "SAT — Site Acceptance Test", "desc": "Collaudi in cantiere guidati passo-passo, con tracciamento esiti e non conformità." },
+      "lp": { "title": "LP — Lesson Plan", "desc": "Pianificazione lezioni e percorsi formativi con obiettivi, materiali e verifiche." }
+    },
+    "wip": "In costruzione"
   },
   "chiSono": {
     "kicker": "Chi Sono",
