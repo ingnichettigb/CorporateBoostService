@@ -219,7 +219,8 @@ function AssistenzaGdprPage() {
               Consolidata esperienza nella Privacy: attivi sin dal 1996, quando
               tutto è cominciato.
             </p>
-            <div className="mt-8">
+            <ChecklistCTAs />
+            <div className="mt-6">
               <Button variant="hero" size="lg" className="h-12 px-8" asChild>
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
