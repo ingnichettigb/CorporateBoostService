@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ContactSection } from "@/components/ContactSection";
+import { ChecklistCTAs } from "@/components/ChecklistCTAs";
 import { corsi, applicazioni } from "@/data/site";
 
 export const Route = createFileRoute("/")({
