@@ -20,71 +20,10 @@ import {
   Mail,
   MapPin,
   Clock,
-  ClipboardCheck,
-  FileCheck2,
-  ArrowRight,
 } from "lucide-react";
-
-const FORM_AUTOVALUTAZIONE =
-  "https://docs.google.com/forms/d/e/1FAIpQLSflM2xH_wCxKb51Ne_95sabvKBGaS9UgcEMMYYrf_AXvR9EtQ/viewform";
-const FORM_VERIFICA =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdeVt3RDMdj-pD8ADGGV6SujATj-7T_TD2Gs7DP-OmKIJ2HDQ/viewform";
-
-function openInNewWindow(url: string) {
-  const w = Math.min(1100, typeof window !== "undefined" ? window.screen.availWidth - 100 : 1000);
-  const h = Math.min(900, typeof window !== "undefined" ? window.screen.availHeight - 100 : 800);
-  const left = typeof window !== "undefined" ? Math.max(0, (window.screen.availWidth - w) / 2) : 0;
-  const top = typeof window !== "undefined" ? Math.max(0, (window.screen.availHeight - h) / 2) : 0;
-  window.open(
-    url,
-    "_blank",
-    `popup=yes,width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes,noopener,noreferrer`,
-  );
-}
-
-function ChecklistCTAs({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const isDark = variant === "dark";
-  const handleClick = (url: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    openInNewWindow(url);
-  };
-  return (
-    <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-      <a
-        href={FORM_AUTOVALUTAZIONE}
-        onClick={handleClick(FORM_AUTOVALUTAZIONE)}
-        className={`group flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition-all ${
-          isDark
-            ? "bg-white/10 border-white/40 text-white hover:bg-white/15"
-            : "bg-white border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-        }`}
-      >
-        <ClipboardCheck className="h-5 w-5 shrink-0" aria-hidden />
-        <span className="flex-1 text-sm md:text-base leading-tight">
-          Autovalutazione Privacy 1996 — Gratis, in 9 domande
-        </span>
-        <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
-      </a>
-      <a
-        href={FORM_VERIFICA}
-        onClick={handleClick(FORM_VERIFICA)}
-        className={`group flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition-all ${
-          isDark
-            ? "bg-white/10 border-white/40 text-white hover:bg-white/15"
-            : "bg-white border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-        }`}
-      >
-        <FileCheck2 className="h-5 w-5 shrink-0" aria-hidden />
-        <span className="flex-1 text-sm md:text-base leading-tight">
-          Verifica la tua conformità GDPR — Gratis, in 10 domande
-        </span>
-        <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
-      </a>
-    </div>
-  );
-}
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ChecklistCTAs } from "@/components/ChecklistCTAs";
 
 export const Route = createFileRoute("/assistenza-gdpr")({
   head: () => ({
