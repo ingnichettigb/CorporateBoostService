@@ -329,6 +329,12 @@ function AssistenzaGdprPage() {
               <div className="text-5xl font-bold">24/7</div>
               <p className="mt-2 text-white/90">Supporto dedicato</p>
             </div>
+            <div className="sm:col-span-3 mt-6">
+              <p className="text-white/95 text-lg font-semibold mb-2">
+                Scopri subito il tuo livello di conformità — gratis e senza impegno
+              </p>
+              <ChecklistCTAs variant="dark" />
+            </div>
           </div>
         </section>
 
