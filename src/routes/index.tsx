@@ -164,6 +164,7 @@ function Home() {
               <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-foreground">{t("nav.assistenza")}</h2>
               <p className="mt-4 text-lg text-foreground/85">{t("hero.subtitle")}</p>
             </div>
+            <ChecklistCTAs className="mb-10" />
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { Icon: ShieldCheck, label: "GDPR", to: "/assistenza-gdpr" as const },
