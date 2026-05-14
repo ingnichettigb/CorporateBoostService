@@ -30,9 +30,6 @@ const FORM_AUTOVALUTAZIONE =
 const FORM_VERIFICA =
   "https://docs.google.com/forms/d/e/1FAIpQLSdeVt3RDMdj-pD8ADGGV6SujATj-7T_TD2Gs7DP-OmKIJ2HDQ/viewform";
 
-function ChecklistCTAs({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const isDark = variant === "dark";
-  return (
 function openInNewWindow(url: string) {
   const w = Math.min(1100, typeof window !== "undefined" ? window.screen.availWidth - 100 : 1000);
   const h = Math.min(900, typeof window !== "undefined" ? window.screen.availHeight - 100 : 800);
