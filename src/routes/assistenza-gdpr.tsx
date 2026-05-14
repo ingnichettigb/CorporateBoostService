@@ -20,7 +20,55 @@ import {
   Mail,
   MapPin,
   Clock,
+  ClipboardCheck,
+  FileCheck2,
+  ArrowRight,
 } from "lucide-react";
+
+const FORM_AUTOVALUTAZIONE =
+  "https://docs.google.com/forms/d/e/1FAIpQLSflM2xH_wCxKb51Ne_95sabvKBGaS9UgcEMMYYrf_AXvR9EtQ/viewform";
+const FORM_VERIFICA =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdeVt3RDMdj-pD8ADGGV6SujATj-7T_TD2Gs7DP-OmKIJ2HDQ/viewform";
+
+function ChecklistCTAs({ variant = "light" }: { variant?: "light" | "dark" }) {
+  const isDark = variant === "dark";
+  return (
+    <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <a
+        href={FORM_AUTOVALUTAZIONE}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition-all ${
+          isDark
+            ? "bg-white/10 border-white/40 text-white hover:bg-white/15"
+            : "bg-white border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        }`}
+      >
+        <ClipboardCheck className="h-5 w-5 shrink-0" aria-hidden />
+        <span className="flex-1 text-sm md:text-base leading-tight">
+          Autovalutazione Privacy 1996 — Gratis, in 9 domande
+        </span>
+        <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
+      </a>
+      <a
+        href={FORM_VERIFICA}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition-all ${
+          isDark
+            ? "bg-white/10 border-white/40 text-white hover:bg-white/15"
+            : "bg-white border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        }`}
+      >
+        <FileCheck2 className="h-5 w-5 shrink-0" aria-hidden />
+        <span className="flex-1 text-sm md:text-base leading-tight">
+          Verifica la tua conformità GDPR — Gratis, in 10 domande
+        </span>
+        <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
+      </a>
+    </div>
+  );
+}
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -171,7 +219,8 @@ function AssistenzaGdprPage() {
               Consolidata esperienza nella Privacy: attivi sin dal 1996, quando
               tutto è cominciato.
             </p>
-            <div className="mt-8">
+            <ChecklistCTAs />
+            <div className="mt-6">
               <Button variant="hero" size="lg" className="h-12 px-8" asChild>
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
@@ -280,6 +329,12 @@ function AssistenzaGdprPage() {
               <div className="text-5xl font-bold">24/7</div>
               <p className="mt-2 text-white/90">Supporto dedicato</p>
             </div>
+            <div className="sm:col-span-3 mt-6">
+              <p className="text-white/95 text-lg font-semibold mb-2">
+                Scopri subito il tuo livello di conformità — gratis e senza impegno
+              </p>
+              <ChecklistCTAs variant="dark" />
+            </div>
           </div>
         </section>
 
@@ -339,6 +394,7 @@ function AssistenzaGdprPage() {
                 Il mancato aggiornamento non è un'opzione, è una violazione di
                 legge. Lo faccio io per te.
               </p>
+              <ChecklistCTAs />
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <Card className="border-2 border-primary/20">
