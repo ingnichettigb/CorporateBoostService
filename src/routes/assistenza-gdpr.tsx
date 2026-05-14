@@ -394,6 +394,7 @@ function AssistenzaGdprPage() {
                 Il mancato aggiornamento non è un'opzione, è una violazione di
                 legge. Lo faccio io per te.
               </p>
+              <ChecklistCTAs />
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <Card className="border-2 border-primary/20">
