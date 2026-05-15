@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as CorsiRouteImport } from './routes/corsi'
+import { Route as ControlliGratuitiRouteImport } from './routes/controlli-gratuiti'
 import { Route as AssistenzaGdprRouteImport } from './routes/assistenza-gdpr'
 import { Route as ApplicazioniRouteImport } from './routes/applicazioni'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const CorsiRoute = CorsiRouteImport.update({
   id: '/corsi',
   path: '/corsi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlliGratuitiRoute = ControlliGratuitiRouteImport.update({
+  id: '/controlli-gratuiti',
+  path: '/controlli-gratuiti',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssistenzaGdprRoute = AssistenzaGdprRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/applicazioni': typeof ApplicazioniRoute
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
+  '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/applicazioni': typeof ApplicazioniRoute
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
+  '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,38 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/applicazioni': typeof ApplicazioniRoute
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
+  '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/applicazioni' | '/assistenza-gdpr' | '/corsi'
+  fullPaths:
+    | '/'
+    | '/applicazioni'
+    | '/assistenza-gdpr'
+    | '/controlli-gratuiti'
+    | '/corsi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/applicazioni' | '/assistenza-gdpr' | '/corsi'
-  id: '__root__' | '/' | '/applicazioni' | '/assistenza-gdpr' | '/corsi'
+  to:
+    | '/'
+    | '/applicazioni'
+    | '/assistenza-gdpr'
+    | '/controlli-gratuiti'
+    | '/corsi'
+  id:
+    | '__root__'
+    | '/'
+    | '/applicazioni'
+    | '/assistenza-gdpr'
+    | '/controlli-gratuiti'
+    | '/corsi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApplicazioniRoute: typeof ApplicazioniRoute
   AssistenzaGdprRoute: typeof AssistenzaGdprRoute
+  ControlliGratuitiRoute: typeof ControlliGratuitiRoute
   CorsiRoute: typeof CorsiRoute
 }
 
@@ -76,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/corsi'
       fullPath: '/corsi'
       preLoaderRoute: typeof CorsiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/controlli-gratuiti': {
+      id: '/controlli-gratuiti'
+      path: '/controlli-gratuiti'
+      fullPath: '/controlli-gratuiti'
+      preLoaderRoute: typeof ControlliGratuitiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assistenza-gdpr': {
@@ -106,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApplicazioniRoute: ApplicazioniRoute,
   AssistenzaGdprRoute: AssistenzaGdprRoute,
+  ControlliGratuitiRoute: ControlliGratuitiRoute,
   CorsiRoute: CorsiRoute,
 }
 export const routeTree = rootRouteImport
