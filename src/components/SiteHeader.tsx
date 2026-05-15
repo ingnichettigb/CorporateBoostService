@@ -103,15 +103,6 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* CTA full-width: controlli gratuiti */}
-      <Link
-        to="/controlli-gratuiti"
-        activeProps={{ className: "ring-2 ring-white/60" }}
-        className="block w-full [background:var(--gradient-hero)] text-primary-foreground text-center font-bold uppercase tracking-wider text-sm md:text-base py-3 px-4 hover:brightness-110 transition-all shadow-[var(--shadow-card)]"
-      >
-        🎁 Faccio tutto io — Gratis per te
-      </Link>
-
       {open && (
         <div className="lg:hidden border-t border-primary/20 bg-background px-4 py-4 flex flex-col gap-3">
           <div className="flex flex-wrap gap-2">
