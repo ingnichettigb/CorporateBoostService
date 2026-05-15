@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TelecamereRouteImport } from './routes/telecamere'
 import { Route as CorsiRouteImport } from './routes/corsi'
 import { Route as ControlliGratuitiRouteImport } from './routes/controlli-gratuiti'
 import { Route as AssistenzaGdprRouteImport } from './routes/assistenza-gdpr'
 import { Route as ApplicazioniRouteImport } from './routes/applicazioni'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TelecamereRoute = TelecamereRouteImport.update({
+  id: '/telecamere',
+  path: '/telecamere',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CorsiRoute = CorsiRouteImport.update({
   id: '/corsi',
   path: '/corsi',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
+  '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
+  '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,6 +70,7 @@ export interface FileRoutesById {
   '/assistenza-gdpr': typeof AssistenzaGdprRoute
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
+  '/telecamere': typeof TelecamereRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -71,6 +80,7 @@ export interface FileRouteTypes {
     | '/assistenza-gdpr'
     | '/controlli-gratuiti'
     | '/corsi'
+    | '/telecamere'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -78,6 +88,7 @@ export interface FileRouteTypes {
     | '/assistenza-gdpr'
     | '/controlli-gratuiti'
     | '/corsi'
+    | '/telecamere'
   id:
     | '__root__'
     | '/'
@@ -85,6 +96,7 @@ export interface FileRouteTypes {
     | '/assistenza-gdpr'
     | '/controlli-gratuiti'
     | '/corsi'
+    | '/telecamere'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,10 +105,18 @@ export interface RootRouteChildren {
   AssistenzaGdprRoute: typeof AssistenzaGdprRoute
   ControlliGratuitiRoute: typeof ControlliGratuitiRoute
   CorsiRoute: typeof CorsiRoute
+  TelecamereRoute: typeof TelecamereRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/telecamere': {
+      id: '/telecamere'
+      path: '/telecamere'
+      fullPath: '/telecamere'
+      preLoaderRoute: typeof TelecamereRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/corsi': {
       id: '/corsi'
       path: '/corsi'
@@ -141,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssistenzaGdprRoute: AssistenzaGdprRoute,
   ControlliGratuitiRoute: ControlliGratuitiRoute,
   CorsiRoute: CorsiRoute,
+  TelecamereRoute: TelecamereRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
