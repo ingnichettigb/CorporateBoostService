@@ -39,7 +39,6 @@ function ControlliGratuitiPage() {
             </h1>
             <p className="mt-5 text-lg md:text-xl text-foreground/85 max-w-2xl mx-auto">
               Scegli un controllo gratuito e scopri in pochi minuti il tuo livello di conformità.
-              Aggiungerò qui altri controlli appena disponibili.
             </p>
           </div>
 
