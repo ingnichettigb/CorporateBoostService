@@ -44,15 +44,7 @@ export function SiteHeader() {
       <div className="border-t border-primary/15 bg-primary/5">
         <div className="container mx-auto px-2 overflow-x-auto">
           <ul className="flex items-center gap-1 min-h-12 text-sm md:text-base font-semibold whitespace-nowrap">
-            <li>
-              <Link
-                to="/controlli-gratuiti"
-                activeProps={{ className: "bg-primary text-primary-foreground" }}
-                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
-              >
-                🎁 Faccio tutto io gratis per te
-              </Link>
-            </li>
+            
             <li>
               <Link
                 to="/"

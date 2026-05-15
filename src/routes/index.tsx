@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, GraduationCap, Layers, CheckCircle2, ShieldCheck, FileLock, Video, MapPin, LifeBuoy, Construction } from "lucide-react";
+import { ArrowRight, GraduationCap, Layers, CheckCircle2, ShieldCheck, FileLock, Video, MapPin, LifeBuoy, Construction, Gift } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -40,6 +40,9 @@ function Home() {
               {t("hero.subtitle")}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 max-w-sm mx-auto">
+              <Button size="lg" className="h-12 w-full bg-yellow-400 text-black border-2 border-black font-bold hover:bg-yellow-300 shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition-all" asChild>
+                <Link to="/controlli-gratuiti"><Gift className="mr-1" aria-hidden /> Faccio tutto io gratis per te</Link>
+              </Button>
               <Button variant="outline" size="lg" className="h-12 w-full border-2 border-primary text-primary font-semibold" asChild>
                 <Link to="/applicazioni"><Layers className="mr-1" aria-hidden /> {t("hero.ctaApp")}</Link>
               </Button>
