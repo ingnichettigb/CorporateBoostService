@@ -46,6 +46,15 @@ export function SiteHeader() {
           <ul className="flex items-center gap-1 min-h-12 text-sm md:text-base font-semibold whitespace-nowrap">
             <li>
               <Link
+                to="/controlli-gratuiti"
+                activeProps={{ className: "bg-primary text-primary-foreground" }}
+                className="inline-flex items-center min-h-11 px-4 rounded-md text-foreground hover:bg-primary/15"
+              >
+                🎁 Faccio tutto io gratis per te
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/"
                 activeOptions={{ exact: true }}
                 activeProps={{ className: "bg-primary text-primary-foreground" }}
