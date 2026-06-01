@@ -172,8 +172,17 @@ function TelecamerePage() {
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
             </div>
+            <div className="mt-12 max-w-3xl mx-auto">
+              <img
+                src={heroImg}
+                alt="Telecamere di videosorveglianza a norma di legge"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
+
 
         {/* DENUNCIA */}
         <section className="py-20 bg-background">
