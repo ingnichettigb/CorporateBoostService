@@ -24,6 +24,8 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ChecklistCTAs } from "@/components/ChecklistCTAs";
+import heroImg from "@/assets/gdpr/hero.jpg";
+import normativaImg from "@/assets/gdpr/normativa.jpg";
 
 export const Route = createFileRoute("/assistenza-gdpr")({
   head: () => ({
