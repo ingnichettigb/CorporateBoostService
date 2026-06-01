@@ -24,6 +24,8 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ChecklistCTAs } from "@/components/ChecklistCTAs";
+import heroImg from "@/assets/gdpr/hero.jpg";
+import normativaImg from "@/assets/gdpr/normativa.jpg";
 
 export const Route = createFileRoute("/assistenza-gdpr")({
   head: () => ({
@@ -178,8 +180,17 @@ function AssistenzaGdprPage() {
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
             </div>
+            <div className="mt-12 max-w-3xl mx-auto">
+              <img
+                src={heroImg}
+                alt="Protezione dei dati personali e conformità GDPR"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
+
 
         {/* SERVIZI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
@@ -227,6 +238,17 @@ function AssistenzaGdprPage() {
               <p className="mt-3 text-foreground/80">
                 Ogni elemento richiesto dal Regolamento UE 2016/679, gestito per
                 te.
+              </p>
+            </div>
+            <div className="mb-10 rounded-2xl border-2 border-primary/15 bg-card p-3 shadow-sm">
+              <img
+                src={normativaImg}
+                alt="Riferimenti normativi sulla privacy: dal 1996 al GDPR"
+                className="w-full rounded-lg"
+                loading="lazy"
+              />
+              <p className="mt-2 text-center text-sm text-foreground/60">
+                I principali riferimenti normativi sulla privacy, dal 1996 ad oggi.
               </p>
             </div>
             <ul className="grid sm:grid-cols-2 gap-3">
