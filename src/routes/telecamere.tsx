@@ -186,32 +186,41 @@ function TelecamerePage() {
 
         {/* DENUNCIA */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
-              Ci penso io
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">Denuncia Impianto: Fatto!</h2>
-            <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
-              <p>
-                Hai installato delle telecamere e ora ti chiedi come fare per la denuncia?
-                Tranquillo, ci penso io! La denuncia dell'impianto di videosorveglianza è
-                un passaggio obbligatorio per essere in regola con la legge. Non lasciare
-                che la burocrazia ti fermi.
+          <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
+                Ci penso io
               </p>
-              <p>
-                Mi occupo di tutto il processo, dalla raccolta dei dati alla presentazione
-                della documentazione necessaria. Il mio obiettivo è rendere questo compito
-                il più semplice e veloce possibile per te, liberandoti da ogni
-                preoccupazione.
-              </p>
-              <p>
-                Con la mia assistenza, avrai la certezza che il tuo impianto sia
-                correttamente registrato e conforme alle normative vigenti. Un piccolo
-                passo per te, un grande passo per la tua tranquillità.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">Denuncia Impianto: Fatto!</h2>
+              <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
+                <p>
+                  Hai installato delle telecamere e ora ti chiedi come fare per la denuncia?
+                  Tranquillo, ci penso io! La denuncia dell'impianto di videosorveglianza è
+                  un passaggio obbligatorio per essere in regola con la legge. Non lasciare
+                  che la burocrazia ti fermi.
+                </p>
+                <p>
+                  Mi occupo di tutto il processo, dalla raccolta dei dati alla presentazione
+                  della documentazione necessaria. Il mio obiettivo è rendere questo compito
+                  il più semplice e veloce possibile per te, liberandoti da ogni
+                  preoccupazione.
+                </p>
+                <p>
+                  Con la mia assistenza, avrai la certezza che il tuo impianto sia
+                  correttamente registrato e conforme alle normative vigenti. Un piccolo
+                  passo per te, un grande passo per la tua tranquillità.
+                </p>
+              </div>
             </div>
+            <img
+              src={denunciaImg}
+              alt="Documentazione e denuncia impianto di videosorveglianza"
+              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+              loading="lazy"
+            />
           </div>
         </section>
+
 
         {/* SERVIZI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
