@@ -180,8 +180,17 @@ function AssistenzaGdprPage() {
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
             </div>
+            <div className="mt-12 max-w-3xl mx-auto">
+              <img
+                src={heroImg}
+                alt="Protezione dei dati personali e conformità GDPR"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
+
 
         {/* SERVIZI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
