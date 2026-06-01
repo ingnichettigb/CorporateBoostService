@@ -25,6 +25,9 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ChecklistCTAs } from "@/components/ChecklistCTAs";
+import heroImg from "@/assets/telecamere/hero.jpg";
+import denunciaImg from "@/assets/telecamere/denuncia.jpg";
+import regolamentoImg from "@/assets/telecamere/regolamento.jpg";
 
 export const Route = createFileRoute("/telecamere")({
   head: () => ({
@@ -168,37 +171,55 @@ function TelecamerePage() {
                 <a href="#contatti">Richiedi un preventivo</a>
               </Button>
             </div>
-          </div>
-        </section>
-
-        {/* DENUNCIA */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
-              Ci penso io
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">Denuncia Impianto: Fatto!</h2>
-            <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
-              <p>
-                Hai installato delle telecamere e ora ti chiedi come fare per la denuncia?
-                Tranquillo, ci penso io! La denuncia dell'impianto di videosorveglianza è
-                un passaggio obbligatorio per essere in regola con la legge. Non lasciare
-                che la burocrazia ti fermi.
-              </p>
-              <p>
-                Mi occupo di tutto il processo, dalla raccolta dei dati alla presentazione
-                della documentazione necessaria. Il mio obiettivo è rendere questo compito
-                il più semplice e veloce possibile per te, liberandoti da ogni
-                preoccupazione.
-              </p>
-              <p>
-                Con la mia assistenza, avrai la certezza che il tuo impianto sia
-                correttamente registrato e conforme alle normative vigenti. Un piccolo
-                passo per te, un grande passo per la tua tranquillità.
-              </p>
+            <div className="mt-12 max-w-3xl mx-auto">
+              <img
+                src={heroImg}
+                alt="Telecamere di videosorveglianza a norma di legge"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
+
+
+        {/* DENUNCIA */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
+                Ci penso io
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">Denuncia Impianto: Fatto!</h2>
+              <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
+                <p>
+                  Hai installato delle telecamere e ora ti chiedi come fare per la denuncia?
+                  Tranquillo, ci penso io! La denuncia dell'impianto di videosorveglianza è
+                  un passaggio obbligatorio per essere in regola con la legge. Non lasciare
+                  che la burocrazia ti fermi.
+                </p>
+                <p>
+                  Mi occupo di tutto il processo, dalla raccolta dei dati alla presentazione
+                  della documentazione necessaria. Il mio obiettivo è rendere questo compito
+                  il più semplice e veloce possibile per te, liberandoti da ogni
+                  preoccupazione.
+                </p>
+                <p>
+                  Con la mia assistenza, avrai la certezza che il tuo impianto sia
+                  correttamente registrato e conforme alle normative vigenti. Un piccolo
+                  passo per te, un grande passo per la tua tranquillità.
+                </p>
+              </div>
+            </div>
+            <img
+              src={denunciaImg}
+              alt="Documentazione e denuncia impianto di videosorveglianza"
+              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
 
         {/* SERVIZI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
@@ -232,30 +253,39 @@ function TelecamerePage() {
 
         {/* REGOLAMENTO INTERNO */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
-              La tua guida
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">Regolamento Interno</h2>
-            <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
-              <p>
-                Creare un regolamento interno per la videosorveglianza non è un optional, è
-                un obbligo. Ti aiuto a redigere un documento chiaro e completo che
-                definisca le regole d'uso, le finalità e le modalità di gestione del tuo
-                impianto, mettendo tutti al riparo da sorprese.
+          <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+            <img
+              src={regolamentoImg}
+              alt="Regolamento interno per la videosorveglianza"
+              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg order-last md:order-first"
+              loading="lazy"
+            />
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
+                La tua guida
               </p>
-              <p>
-                Questo documento è fondamentale per dimostrare la tua attenzione alla
-                privacy e per gestire correttamente i dati raccolti dalle telecamere.
-                Senza di esso, rischi sanzioni salate e mal di testa legali.
-              </p>
-              <p>
-                Pensa a me come al tuo architetto della conformità: costruiamo insieme le
-                fondamenta legali del tuo sistema di sorveglianza, un articolo alla volta.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">Regolamento Interno</h2>
+              <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
+                <p>
+                  Creare un regolamento interno per la videosorveglianza non è un optional, è
+                  un obbligo. Ti aiuto a redigere un documento chiaro e completo che
+                  definisca le regole d'uso, le finalità e le modalità di gestione del tuo
+                  impianto, mettendo tutti al riparo da sorprese.
+                </p>
+                <p>
+                  Questo documento è fondamentale per dimostrare la tua attenzione alla
+                  privacy e per gestire correttamente i dati raccolti dalle telecamere.
+                  Senza di esso, rischi sanzioni salate e mal di testa legali.
+                </p>
+                <p>
+                  Pensa a me come al tuo architetto della conformità: costruiamo insieme le
+                  fondamenta legali del tuo sistema di sorveglianza, un articolo alla volta.
+                </p>
+              </div>
             </div>
           </div>
         </section>
+
 
         {/* MOTIVI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
