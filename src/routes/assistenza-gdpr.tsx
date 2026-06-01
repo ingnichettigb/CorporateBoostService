@@ -240,6 +240,17 @@ function AssistenzaGdprPage() {
                 te.
               </p>
             </div>
+            <div className="mb-10 rounded-2xl border-2 border-primary/15 bg-card p-3 shadow-sm">
+              <img
+                src={normativaImg}
+                alt="Riferimenti normativi sulla privacy: dal 1996 al GDPR"
+                className="w-full rounded-lg"
+                loading="lazy"
+              />
+              <p className="mt-2 text-center text-sm text-foreground/60">
+                I principali riferimenti normativi sulla privacy, dal 1996 ad oggi.
+              </p>
+            </div>
             <ul className="grid sm:grid-cols-2 gap-3">
               {piaPoints.map((p) => (
                 <li
