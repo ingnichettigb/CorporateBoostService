@@ -254,30 +254,39 @@ function TelecamerePage() {
 
         {/* REGOLAMENTO INTERNO */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
-              La tua guida
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">Regolamento Interno</h2>
-            <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
-              <p>
-                Creare un regolamento interno per la videosorveglianza non è un optional, è
-                un obbligo. Ti aiuto a redigere un documento chiaro e completo che
-                definisca le regole d'uso, le finalità e le modalità di gestione del tuo
-                impianto, mettendo tutti al riparo da sorprese.
+          <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+            <img
+              src={regolamentoImg}
+              alt="Regolamento interno per la videosorveglianza"
+              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg order-last md:order-first"
+              loading="lazy"
+            />
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
+                La tua guida
               </p>
-              <p>
-                Questo documento è fondamentale per dimostrare la tua attenzione alla
-                privacy e per gestire correttamente i dati raccolti dalle telecamere.
-                Senza di esso, rischi sanzioni salate e mal di testa legali.
-              </p>
-              <p>
-                Pensa a me come al tuo architetto della conformità: costruiamo insieme le
-                fondamenta legali del tuo sistema di sorveglianza, un articolo alla volta.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">Regolamento Interno</h2>
+              <div className="mt-5 space-y-4 text-foreground/85 text-lg leading-relaxed">
+                <p>
+                  Creare un regolamento interno per la videosorveglianza non è un optional, è
+                  un obbligo. Ti aiuto a redigere un documento chiaro e completo che
+                  definisca le regole d'uso, le finalità e le modalità di gestione del tuo
+                  impianto, mettendo tutti al riparo da sorprese.
+                </p>
+                <p>
+                  Questo documento è fondamentale per dimostrare la tua attenzione alla
+                  privacy e per gestire correttamente i dati raccolti dalle telecamere.
+                  Senza di esso, rischi sanzioni salate e mal di testa legali.
+                </p>
+                <p>
+                  Pensa a me come al tuo architetto della conformità: costruiamo insieme le
+                  fondamenta legali del tuo sistema di sorveglianza, un articolo alla volta.
+                </p>
+              </div>
             </div>
           </div>
         </section>
+
 
         {/* MOTIVI */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
