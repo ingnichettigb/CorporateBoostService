@@ -28,7 +28,6 @@ import { ChecklistCTAs } from "@/components/ChecklistCTAs";
 import heroImg from "@/assets/telecamere/hero.jpg";
 import denunciaImg from "@/assets/telecamere/denuncia.jpg";
 import regolamentoImg from "@/assets/telecamere/regolamento.jpg";
-import gdprImg from "@/assets/telecamere/gdpr.jpg";
 
 export const Route = createFileRoute("/telecamere")({
   head: () => ({
