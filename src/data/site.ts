@@ -10,6 +10,7 @@ export const corsi = [
 
 export const applicazioni = [
   { icon: Wrench, key: "smartMaintenance", image: smartMaintenanceLogo, wip: false },
+  { icon: ClipboardCheck, key: "miniFat", wip: false },
   { icon: Factory, key: "fat", wip: true },
   { icon: ClipboardCheck, key: "sat", wip: true },
   { icon: BookOpen, key: "lp", wip: true },
