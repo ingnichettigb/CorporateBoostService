@@ -173,7 +173,7 @@ function Home() {
                 { Icon: ShieldCheck, label: "GDPR", to: "/assistenza-gdpr" as const },
                 { Icon: FileLock, label: "Privacy", to: "/assistenza-gdpr" as const },
                 { Icon: Video, label: "Telecamere", to: "/telecamere" as const },
-                { Icon: MapPin, label: "GPS", to: null },
+                { Icon: MapPin, label: "GPS", to: "/gps" as const },
               ].map(({ Icon, label, to }) => {
                 const inner = (
                   <>
