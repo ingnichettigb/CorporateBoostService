@@ -59,6 +59,7 @@
     "feat3": "Aggiornamenti continui",
     "items": {
       "smartMaintenance": { "title": "Smart Maintenance", "desc": "L'assistente digitale per manutenzioni e sopralluoghi: acquisisce immagini e video, trasforma le note vocali in testo e organizza tutto in report pronti da condividere." },
+      "miniFat": { "title": "MiniFAT", "desc": "MiniFAT è un'applicazione che ottimizza i collaudi preparando in anticipo la documentazione necessaria per il sopralluogo FAT." },
       "fat": { "title": "FAT — Factory Acceptance Test", "desc": "Gestione digitale dei collaudi in fabbrica: checklist, evidenze fotografiche e verbali firmati." },
       "sat": { "title": "SAT — Site Acceptance Test", "desc": "Collaudi in cantiere guidati passo-passo, con tracciamento esiti e non conformità." },
       "lp": { "title": "LP — Lesson Plan", "desc": "Pianificazione lezioni e percorsi formativi con obiettivi, materiali e verifiche." }

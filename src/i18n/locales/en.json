@@ -59,6 +59,7 @@
     "feat3": "Continuous updates",
     "items": {
       "smartMaintenance": { "title": "Smart Maintenance", "desc": "The digital assistant for maintenance and on-site inspections: captures photos and videos, turns voice notes into text and organizes everything into ready-to-share reports." },
+      "miniFat": { "title": "MiniFAT", "desc": "MiniFAT is an application that optimizes acceptance tests by preparing in advance the documentation needed for the FAT inspection." },
       "fat": { "title": "FAT — Factory Acceptance Test", "desc": "Digital management of factory acceptance tests: checklists, photo evidence and signed reports." },
       "sat": { "title": "SAT — Site Acceptance Test", "desc": "Step-by-step on-site acceptance tests with outcome tracking and non-conformities." },
       "lp": { "title": "LP — Lesson Plan", "desc": "Plan lessons and training paths with objectives, materials and assessments." }
