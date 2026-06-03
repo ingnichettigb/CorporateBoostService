@@ -6,11 +6,10 @@ import { ContactSection } from "@/components/ContactSection";
 import { corsi } from "@/data/site";
 import { ArrowRight, Clock, Award, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { TFunction } from "i18next";
 
 const EMAIL = "supporto@corporateboostservice.it";
 
-function buildMailto(corso: string, t: TFunction) {
+function buildMailto(corso: string) {
   const subject = corso;
   const body = [
     `Salve,`,
