@@ -7,6 +7,24 @@ import { corsi } from "@/data/site";
 import { ArrowRight, Clock, Award, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+const EMAIL = "supporto@corporateboostservice.it";
+
+function buildMailto(corso: string) {
+  const subject = corso;
+  const body = [
+    `Salve,`,
+    ``,
+    `desidero ricevere maggiori informazioni sul corso "${corso}".`,
+    ``,
+    `La mia email di contatto è: [inserisci qui la tua email]`,
+    `Nome e cognome: `,
+    `Telefono: `,
+    ``,
+    `Grazie,`,
+  ].join("\n");
+  return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export const Route = createFileRoute("/corsi")({
   head: () => ({
     meta: [
@@ -46,8 +64,10 @@ function CorsiPage() {
                 </div>
                 <h2 className="text-xl font-bold mb-2 text-foreground">{t(`corsi.items.${key}.title`)}</h2>
                 <p className="text-foreground/85 leading-relaxed mb-6">{t(`corsi.items.${key}.desc`)}</p>
-                <Button variant="hero" size="default" className="h-11">
-                  {t("corsi.iscriviti")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                <Button asChild variant="hero" size="default" className="h-11">
+                  <a href={buildMailto(t(`corsi.items.${key}.title`))}>
+                    {t("corsi.iscriviti")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                  </a>
                 </Button>
               </article>
             ))}
