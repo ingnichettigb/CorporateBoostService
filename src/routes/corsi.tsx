@@ -65,7 +65,7 @@ function CorsiPage() {
                 <h2 className="text-xl font-bold mb-2 text-foreground">{t(`corsi.items.${key}.title`)}</h2>
                 <p className="text-foreground/85 leading-relaxed mb-6">{t(`corsi.items.${key}.desc`)}</p>
                 <Button asChild variant="hero" size="default" className="h-11">
-                  <a href={buildMailto(t(`corsi.items.${key}.title`), t)}>
+                  <a href={buildMailto(t(`corsi.items.${key}.title`))}>
                     {t("corsi.iscriviti")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
                   </a>
                 </Button>
