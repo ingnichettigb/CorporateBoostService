@@ -6,6 +6,25 @@ import { ContactSection } from "@/components/ContactSection";
 import { corsi } from "@/data/site";
 import { ArrowRight, Clock, Award, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
+
+const EMAIL = "supporto@corporateboostservice.it";
+
+function buildMailto(corso: string, t: TFunction) {
+  const subject = corso;
+  const body = [
+    `Salve,`,
+    ``,
+    `desidero ricevere maggiori informazioni sul corso "${corso}".`,
+    ``,
+    `La mia email di contatto è: [inserisci qui la tua email]`,
+    `Nome e cognome: `,
+    `Telefono: `,
+    ``,
+    `Grazie,`,
+  ].join("\n");
+  return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export const Route = createFileRoute("/corsi")({
   head: () => ({
