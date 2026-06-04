@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TelecamereRouteImport } from './routes/telecamere'
+import { Route as MinifatRouteImport } from './routes/minifat'
 import { Route as GpsRouteImport } from './routes/gps'
 import { Route as CorsiRouteImport } from './routes/corsi'
 import { Route as ControlliGratuitiRouteImport } from './routes/controlli-gratuiti'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TelecamereRoute = TelecamereRouteImport.update({
   id: '/telecamere',
   path: '/telecamere',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinifatRoute = MinifatRouteImport.update({
+  id: '/minifat',
+  path: '/minifat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GpsRoute = GpsRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
+  '/minifat': typeof MinifatRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
+  '/minifat': typeof MinifatRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/controlli-gratuiti': typeof ControlliGratuitiRoute
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
+  '/minifat': typeof MinifatRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/controlli-gratuiti'
     | '/corsi'
     | '/gps'
+    | '/minifat'
     | '/telecamere'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/controlli-gratuiti'
     | '/corsi'
     | '/gps'
+    | '/minifat'
     | '/telecamere'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/controlli-gratuiti'
     | '/corsi'
     | '/gps'
+    | '/minifat'
     | '/telecamere'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   ControlliGratuitiRoute: typeof ControlliGratuitiRoute
   CorsiRoute: typeof CorsiRoute
   GpsRoute: typeof GpsRoute
+  MinifatRoute: typeof MinifatRoute
   TelecamereRoute: typeof TelecamereRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/telecamere'
       fullPath: '/telecamere'
       preLoaderRoute: typeof TelecamereRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minifat': {
+      id: '/minifat'
+      path: '/minifat'
+      fullPath: '/minifat'
+      preLoaderRoute: typeof MinifatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gps': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   ControlliGratuitiRoute: ControlliGratuitiRoute,
   CorsiRoute: CorsiRoute,
   GpsRoute: GpsRoute,
+  MinifatRoute: MinifatRoute,
   TelecamereRoute: TelecamereRoute,
 }
 export const routeTree = rootRouteImport
