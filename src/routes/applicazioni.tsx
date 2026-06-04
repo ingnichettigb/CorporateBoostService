@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -61,7 +61,14 @@ function AppPage() {
                 )}
                 <h2 className="text-lg font-bold mb-2 text-foreground">{t(`app.items.${key}.title`)}</h2>
                 <p className="text-foreground/85 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
-                {!wip && (
+                {!wip && key === "miniFat" && (
+                  <Button asChild variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80">
+                    <Link to="/minifat">
+                      {t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                    </Link>
+                  </Button>
+                )}
+                {!wip && key !== "miniFat" && (
                   <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80">
                     {t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
                   </Button>
