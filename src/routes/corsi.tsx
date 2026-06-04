@@ -21,6 +21,7 @@ function buildMailto(corso: string) {
     `Telefono: `,
     ``,
     `Grazie,`,
+    `Corporate Boost Service`,
   ].join("\n");
   return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
