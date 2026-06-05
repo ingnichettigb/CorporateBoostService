@@ -343,6 +343,105 @@ function MiniFatPage() {
           </div>
         </section>
 
+        {/* IL METODO */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-12">
+              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-2">
+                Il metodo MiniFAT
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Prepara il FAT con un passo avanti
+              </h2>
+            </div>
+
+            <div className="space-y-5 text-lg text-foreground/85 leading-relaxed">
+              <p>
+                MiniFAT ti permette di preparare il dossier FAT in anticipo, con una
+                struttura chiara e professionale. Lo compili, lo generi e lo invii al
+                costruttore con tutti i capitoli già predisposti. Lui inserisce i suoi
+                documenti direttamente dietro ai tuoi, seguendo la struttura che hai
+                definito.
+              </p>
+              <p>
+                Qualche giorno prima del FAT ti rimanda tutto completo: tu puoi verificare
+                con calma, chiedere integrazioni, chiarire eventuali punti critici. Quando
+                arrivi in cantiere, non devi più aspettare nulla: trovi già tutto pronto.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-5 mt-10">
+              {[
+                {
+                  title: "Ottimizza la tua giornata",
+                  desc: "Arriverai in cantiere e troverai già tutto predisposto, così potrai concentrarti solo sul macchinario.",
+                },
+                {
+                  title: "Riduci le attese inutili",
+                  desc: "I documenti saranno pronti al tuo arrivo e tu potrai dedicarti subito alla parte tecnica.",
+                },
+                {
+                  title: "Entra e lavora subito",
+                  desc: "Zero perdite di tempo: trovi tutto organizzato e puoi passare direttamente alla verifica del macchinario.",
+                },
+              ].map(({ title, desc }) => (
+                <Card key={title} className="border-2 border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground/80">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="space-y-5 text-lg text-foreground/85 leading-relaxed mt-12">
+              <p>
+                MiniFAT elimina la confusione, i PDF disordinati, i documenti mancanti e le
+                corse dell'ultimo minuto. Ti permette di arrivare al FAT con un dossier
+                completo, verificato e già approvato nelle parti burocratiche.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-5 mt-10">
+              {[
+                {
+                  title: "Massimizza ogni minuto",
+                  desc: "La burocrazia è già sistemata, tu ti concentri solo sulla visione e sul controllo operativo.",
+                },
+                {
+                  title: "Arrivi e inizi a fare sul serio",
+                  desc: "Documenti pronti, procedure già allineate: resta solo da valutare il macchinario.",
+                },
+                {
+                  title: "Lavora con un passo avanti",
+                  desc: "Tutto predisposto in anticipo, così puoi dedicarti subito alla parte che conta davvero.",
+                },
+              ].map(({ title, desc }) => (
+                <Card key={title} className="border-2 border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground/80">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 rounded-2xl border-2 border-primary/30 [background:var(--gradient-section-corsi)] p-8 text-center">
+              <p className="text-xl md:text-2xl font-bold">
+                MiniFAT non è solo un'app:
+              </p>
+              <p className="mt-2 text-lg text-foreground/85">
+                è un nuovo modo di gestire il FAT, più rapido, più pulito, più professionale.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
         {/* PERCHE */}
         <section className="py-20 [background:var(--gradient-section-corsi)] border-y-2 border-primary/15">
           <div className="container mx-auto px-4 max-w-6xl">
