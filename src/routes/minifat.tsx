@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImg from "@/assets/minifat/hero.jpg";
+import heroAsset from "@/assets/minifat/minifat-process.png.asset.json";
 import screenMain from "@/assets/minifat/screen-main.jpg";
 import screenDocs from "@/assets/minifat/screen-docs.jpg";
 import screenPdf from "@/assets/minifat/screen-pdf.jpg";
