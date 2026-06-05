@@ -241,7 +241,7 @@ function MiniFatPage() {
               </p>
             </div>
             <img
-              src={heroImg}
+              src={heroAsset.url}
               alt="App MiniFAT su tablet e smartphone con un dossier FAT professionale"
               className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
               width={1280}
