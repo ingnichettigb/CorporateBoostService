@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TelecamereRouteImport } from './routes/telecamere'
+import { Route as SmartMaintenanceRouteImport } from './routes/smart-maintenance'
 import { Route as MinifatRouteImport } from './routes/minifat'
 import { Route as GpsRouteImport } from './routes/gps'
 import { Route as CorsiRouteImport } from './routes/corsi'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TelecamereRoute = TelecamereRouteImport.update({
   id: '/telecamere',
   path: '/telecamere',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmartMaintenanceRoute = SmartMaintenanceRouteImport.update({
+  id: '/smart-maintenance',
+  path: '/smart-maintenance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MinifatRoute = MinifatRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/smart-maintenance'
     | '/telecamere'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/smart-maintenance'
     | '/telecamere'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/smart-maintenance'
     | '/telecamere'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   CorsiRoute: typeof CorsiRoute
   GpsRoute: typeof GpsRoute
   MinifatRoute: typeof MinifatRoute
+  SmartMaintenanceRoute: typeof SmartMaintenanceRoute
   TelecamereRoute: typeof TelecamereRoute
 }
 
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/telecamere'
       fullPath: '/telecamere'
       preLoaderRoute: typeof TelecamereRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smart-maintenance': {
+      id: '/smart-maintenance'
+      path: '/smart-maintenance'
+      fullPath: '/smart-maintenance'
+      preLoaderRoute: typeof SmartMaintenanceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/minifat': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   CorsiRoute: CorsiRoute,
   GpsRoute: GpsRoute,
   MinifatRoute: MinifatRoute,
+  SmartMaintenanceRoute: SmartMaintenanceRoute,
   TelecamereRoute: TelecamereRoute,
 }
 export const routeTree = rootRouteImport
