@@ -319,7 +319,7 @@ function MiniFatPage() {
               <h2 className="text-3xl md:text-4xl font-bold">Semplice, chiara, professionale</h2>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {screenshots.map(({ img, caption }) => (
+              {screenshots.map(({ img, caption }, i) => (
                 <figure key={caption} className="text-center">
                   <div className="rounded-2xl border-2 border-primary/15 bg-secondary overflow-hidden shadow-[var(--shadow-card)]">
                     <img
@@ -331,7 +331,10 @@ function MiniFatPage() {
                       loading="lazy"
                     />
                   </div>
-                  <figcaption className="mt-3 text-sm font-semibold text-foreground/80">
+                  <figcaption className="mt-3 text-xs text-foreground/70">
+                    <sup className="text-[0.65rem] font-bold text-primary mr-0.5">
+                      {i + 1}
+                    </sup>
                     {caption}
                   </figcaption>
                 </figure>
