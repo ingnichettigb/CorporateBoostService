@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImg from "@/assets/minifat/hero.jpg";
+import heroAsset from "@/assets/minifat/minifat-process.png.asset.json";
 import screenMain from "@/assets/minifat/screen-main.jpg";
 import screenDocs from "@/assets/minifat/screen-docs.jpg";
 import screenPdf from "@/assets/minifat/screen-pdf.jpg";
@@ -241,7 +241,7 @@ function MiniFatPage() {
               </p>
             </div>
             <img
-              src={heroImg}
+              src={heroAsset.url}
               alt="App MiniFAT su tablet e smartphone con un dossier FAT professionale"
               className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
               width={1280}
