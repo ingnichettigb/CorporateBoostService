@@ -33,8 +33,10 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImg from "@/assets/smart-maintenance/hero.jpg";
+import heroAsset from "@/assets/smart-maintenance/home.png.asset.json";
 import pdfImg from "@/assets/smart-maintenance/pdf.jpg";
+
+const heroImg = heroAsset.url;
 
 export const Route = createFileRoute("/smart-maintenance")({
   head: () => ({
