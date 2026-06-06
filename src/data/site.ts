@@ -1,5 +1,5 @@
 import { ShieldCheck, FileLock, HardHat, Newspaper, Wrench, Factory, ClipboardCheck, BookOpen, FlaskConical } from "lucide-react";
-import smartMaintenanceLogo from "@/assets/smart-maintenance.png";
+import smartMaintenanceLogo from "@/assets/apps/smartmaintenance.jpg.asset.json";
 import pedflowLogo from "@/assets/apps/pedflow.png.asset.json";
 import minifatLogo from "@/assets/apps/minifat.png.asset.json";
 
@@ -12,7 +12,7 @@ export const corsi = [
 
 export const applicazioni = [
   { icon: FlaskConical, key: "pedFlow", image: pedflowLogo.url, wip: false },
-  { icon: Wrench, key: "smartMaintenance", image: smartMaintenanceLogo, wip: false },
+  { icon: Wrench, key: "smartMaintenance", image: smartMaintenanceLogo.url, wip: false },
   { icon: ClipboardCheck, key: "miniFat", image: minifatLogo.url, wip: false },
   { icon: Factory, key: "fat", wip: true },
   { icon: ClipboardCheck, key: "sat", wip: true },
