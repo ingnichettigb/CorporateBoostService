@@ -251,13 +251,18 @@ function SmartMaintenancePage() {
                 Mobile-first · Funziona offline · Dati salvati sul tuo dispositivo
               </p>
             </div>
-            <img
-              src={heroImg}
-              alt="App SmartMaintenance su smartphone con un report di manutenzione industriale"
-              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
-              width={1280}
-              height={960}
-            />
+            <figure className="m-0">
+              <img
+                src={heroImg}
+                alt="App SmartMaintenance su smartphone con un report di manutenzione industriale"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                width={1206}
+                height={880}
+              />
+              <figcaption className="mt-3 text-center text-sm text-foreground/65">
+                Home page Smart Maintenance
+              </figcaption>
+            </figure>
           </div>
         </section>
 
