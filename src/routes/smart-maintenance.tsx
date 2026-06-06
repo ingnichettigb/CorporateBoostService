@@ -33,8 +33,10 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImg from "@/assets/smart-maintenance/hero.jpg";
+import heroAsset from "@/assets/smart-maintenance/home.png.asset.json";
 import pdfImg from "@/assets/smart-maintenance/pdf.jpg";
+
+const heroImg = heroAsset.url;
 
 export const Route = createFileRoute("/smart-maintenance")({
   head: () => ({
@@ -249,13 +251,18 @@ function SmartMaintenancePage() {
                 Mobile-first · Funziona offline · Dati salvati sul tuo dispositivo
               </p>
             </div>
-            <img
-              src={heroImg}
-              alt="App SmartMaintenance su smartphone con un report di manutenzione industriale"
-              className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
-              width={1280}
-              height={960}
-            />
+            <figure className="m-0">
+              <img
+                src={heroImg}
+                alt="App SmartMaintenance su smartphone con un report di manutenzione industriale"
+                className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                width={1206}
+                height={880}
+              />
+              <figcaption className="mt-3 text-center text-sm text-foreground/65">
+                Home page Smart Maintenance
+              </figcaption>
+            </figure>
           </div>
         </section>
 
