@@ -99,6 +99,20 @@ function Home() {
                 const { icon: Icon, key } = item;
                 const image = "image" in item ? item.image : undefined;
                 const wip = "wip" in item ? item.wip : false;
+                const routeMap: Record<string, string> = {
+                  miniFat: "/minifat",
+                  smartMaintenance: "/smart-maintenance",
+                };
+                const to = !wip ? routeMap[key] : undefined;
+                const logo = image ? (
+                  <div className="h-16 w-16 rounded-lg overflow-hidden bg-white border border-primary/20 flex items-center justify-center mb-5">
+                    <img src={image} alt={t(`app.items.${key}.title`)} className="h-full w-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="h-12 w-12 rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
+                    <Icon className="h-6 w-6" aria-hidden />
+                  </div>
+                );
                 return (
                 <article key={key} className="relative p-6 rounded-2xl border-2 border-primary/20 bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
                   {wip && (
@@ -106,20 +120,18 @@ function Home() {
                       <Construction className="h-3.5 w-3.5" aria-hidden /> {t("app.wip")}
                     </span>
                   )}
-                  {image ? (
-                    <div className="h-16 w-16 rounded-lg overflow-hidden bg-white border border-primary/20 flex items-center justify-center mb-5">
-                      <img src={image} alt={t(`app.items.${key}.title`)} className="h-full w-full object-contain" />
-                    </div>
+                  {to ? (
+                    <Link to={to} aria-label={t(`app.items.${key}.title`)} className="inline-block rounded-lg transition-transform hover:scale-105">
+                      {logo}
+                    </Link>
                   ) : (
-                    <div className="h-12 w-12 rounded-lg [background:var(--gradient-hero)] text-primary-foreground flex items-center justify-center mb-5">
-                      <Icon className="h-6 w-6" aria-hidden />
-                    </div>
+                    logo
                   )}
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t(`app.items.${key}.title`)}</h3>
                   <p className="text-foreground/80 leading-relaxed mb-5">{t(`app.items.${key}.desc`)}</p>
                   {!wip && (
                     <Button variant="ghost" size="sm" className="px-0 text-primary font-bold hover:bg-transparent hover:text-primary/80" asChild>
-                      <Link to="/applicazioni">{t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></Link>
+                      <Link to={to ?? "/applicazioni"}>{t("app.more")} <ArrowRight className="ml-1 h-4 w-4" aria-hidden /></Link>
                     </Button>
                   )}
                 </article>
