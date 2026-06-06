@@ -1,5 +1,5 @@
 import { ShieldCheck, FileLock, HardHat, Newspaper, Wrench, Factory, ClipboardCheck, BookOpen, FlaskConical } from "lucide-react";
-import smartMaintenanceLogo from "@/assets/smart-maintenance.png";
+import smartMaintenanceLogo from "@/assets/apps/smartmaintenance.jpg.asset.json";
 import pedflowLogo from "@/assets/apps/pedflow.png.asset.json";
 import minifatLogo from "@/assets/apps/minifat.png.asset.json";
 
