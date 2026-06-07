@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TelecamereRouteImport } from './routes/telecamere'
 import { Route as SmartMaintenanceRouteImport } from './routes/smart-maintenance'
+import { Route as PedflowRouteImport } from './routes/pedflow'
 import { Route as MinifatRouteImport } from './routes/minifat'
 import { Route as GpsRouteImport } from './routes/gps'
 import { Route as CorsiRouteImport } from './routes/corsi'
@@ -27,6 +28,11 @@ const TelecamereRoute = TelecamereRouteImport.update({
 const SmartMaintenanceRoute = SmartMaintenanceRouteImport.update({
   id: '/smart-maintenance',
   path: '/smart-maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedflowRoute = PedflowRouteImport.update({
+  id: '/pedflow',
+  path: '/pedflow',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MinifatRoute = MinifatRouteImport.update({
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/pedflow': typeof PedflowRoute
   '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/pedflow': typeof PedflowRoute
   '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/corsi': typeof CorsiRoute
   '/gps': typeof GpsRoute
   '/minifat': typeof MinifatRoute
+  '/pedflow': typeof PedflowRoute
   '/smart-maintenance': typeof SmartMaintenanceRoute
   '/telecamere': typeof TelecamereRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/pedflow'
     | '/smart-maintenance'
     | '/telecamere'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/pedflow'
     | '/smart-maintenance'
     | '/telecamere'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/corsi'
     | '/gps'
     | '/minifat'
+    | '/pedflow'
     | '/smart-maintenance'
     | '/telecamere'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   CorsiRoute: typeof CorsiRoute
   GpsRoute: typeof GpsRoute
   MinifatRoute: typeof MinifatRoute
+  PedflowRoute: typeof PedflowRoute
   SmartMaintenanceRoute: typeof SmartMaintenanceRoute
   TelecamereRoute: typeof TelecamereRoute
 }
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/smart-maintenance'
       fullPath: '/smart-maintenance'
       preLoaderRoute: typeof SmartMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedflow': {
+      id: '/pedflow'
+      path: '/pedflow'
+      fullPath: '/pedflow'
+      preLoaderRoute: typeof PedflowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/minifat': {
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   CorsiRoute: CorsiRoute,
   GpsRoute: GpsRoute,
   MinifatRoute: MinifatRoute,
+  PedflowRoute: PedflowRoute,
   SmartMaintenanceRoute: SmartMaintenanceRoute,
   TelecamereRoute: TelecamereRoute,
 }
