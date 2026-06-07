@@ -34,9 +34,11 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroAsset from "@/assets/smart-maintenance/home.png.asset.json";
+import flowAsset from "@/assets/smart-maintenance/flow.png.asset.json";
 import pdfImg from "@/assets/smart-maintenance/pdf.jpg";
 
 const heroImg = heroAsset.url;
+const flowImg = flowAsset.url;
 
 export const Route = createFileRoute("/smart-maintenance")({
   head: () => ({
@@ -247,6 +249,16 @@ function SmartMaintenancePage() {
                   <PlayCircle className="h-5 w-5" aria-hidden /> Richiedi demo
                 </Button>
               </div>
+              <figure className="mt-8 m-0">
+                <img
+                  src={flowImg}
+                  alt="Flusso di lavoro SmartMaintenance: configurazione, creazione report sul campo, generazione PDF, invio, ricezione e archiviazione"
+                  className="w-full rounded-2xl border-2 border-primary/15 shadow-lg"
+                  width={1408}
+                  height={742}
+                  loading="lazy"
+                />
+              </figure>
               <p className="mt-4 text-sm text-foreground/65">
                 Mobile-first · Funziona offline · Dati salvati sul tuo dispositivo
               </p>
