@@ -44,6 +44,7 @@ function AppPage() {
               const image = "image" in item ? item.image : undefined;
               const wip = "wip" in item ? item.wip : false;
               const routeMap: Record<string, string> = {
+                pedFlow: "/pedflow",
                 miniFat: "/minifat",
                 smartMaintenance: "/smart-maintenance",
               };
